@@ -24,7 +24,63 @@ from tkinter import filedialog
 
 # custom module below
 from Fourier import Fourier
-import FourierAnalysisToolsForPackage as ft
+import FourierAnalysisTools as ft
+
+
+#%% 
+def matplotFFT(w, nameOfFiles):
+    freqArray, fftp = ft.fftMultipleFiles(w)
+    #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
+
+    for i in range(len(fftp)):
+        intenVal = 10*log10(fftp[i])
+        fig = plt.figure()
+        ax = fig.add_subplot(1,2,1)
+        ax.plot(  freqArray[i], intenVal  )
+        ax.set_xlabel('Frequency (Hertz)')
+        ax.set_ylabel('Intensity (Decibels)')
+    
+    plt.show()
+
+#%%
+def matplotSpectrogram(w, nameOfFiles):
+    freqArray, fftp = ft.fftMultipleFiles(w)
+
+    for i in range(len(fftp)):
+        fig, ax1 = plt.subplots(nrows = 1)
+        powerSpectrum, frequenciesFound, time, imageAxis = ax1.specgram(w[i].data[:,0], Fs = w[i].rate)
+        ax1.set_xlabel('Time (Seconds)')
+        ax1.set_ylabel('Frequency (Hertz)')
+
+
+
+
+#%%
+'''
+figs = []
+for i in range(len(fftp)):
+    fig = go.Figure()
+    figs.append(fig)
+
+for i in range(len(figs)):
+    figs[i]
+    title = str(input("Enter the title of the graph"))
+    figs[i].add_trace(go.Scatter(
+        x = (freqArray[i]),
+        y = 10*log10(fftp[i])
+        #name = nameOfFiles[i]
+    ))
+    figs[i].update_layout(
+        title=title
+    )
+    figs[i].update_xaxes(title_text='Frequency (Hz)')
+    figs[i].update_yaxes(title_text='Intensity (dB)')
+    
+for i in range(len(figs)):
+    figs[i]
+'''
+
+
 
 
 '''
@@ -57,61 +113,4 @@ for i in range(len(fftp)):
     ax1.set_xlabel('Time')
     ax1.set_ylabel('Frequency')
 '''
-
-#%% 
-def matplotFFT():
-    #%% MAIN FFT
-    w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
-    freqArray, fftp = ft.fftMultipleFiles(w)
-    #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
-
-    for i in range(len(fftp)):
-        intenVal = 10*log10(fftp[i])
-        fig = plt.figure()
-        ax = fig.add_subplot(1,2,1)
-        ax.plot(  freqArray[i], intenVal  )
-        ax.set_xlabel('Frequency (Hertz)')
-        ax.set_ylabel('Intensity (Decibels)')
-    
-    plt.show()
-
-#%%
-def matplotSpectrogram():
-    w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
-    freqArray, fftp = ft.fftMultipleFiles(w)
-
-    for i in range(len(fftp)):
-        fig, ax1 = plt.subplots(nrows = 1)
-        powerSpectrum, frequenciesFound, time, imageAxis = ax1.specgram(w[i].data[:,0], Fs = w[i].rate)
-        ax1.set_xlabel('Time (Seconds)')
-        ax1.set_ylabel('Frequency (Hertz)')
-
-#%%
-'''
-figs = []
-for i in range(len(fftp)):
-    fig = go.Figure()
-    figs.append(fig)
-
-for i in range(len(figs)):
-    figs[i]
-    title = str(input("Enter the title of the graph"))
-    figs[i].add_trace(go.Scatter(
-        x = (freqArray[i]),
-        y = 10*log10(fftp[i])
-        #name = nameOfFiles[i]
-    ))
-    figs[i].update_layout(
-        title=title
-    )
-    figs[i].update_xaxes(title_text='Frequency (Hz)')
-    figs[i].update_yaxes(title_text='Intensity (dB)')
-    
-for i in range(len(figs)):
-    figs[i]
-'''
-# %%
-
-
-# %%
 

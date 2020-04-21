@@ -26,25 +26,9 @@ from tkinter import filedialog
 from Fourier import Fourier
 import FourierAnalysisToolsForPackage as ft
 
-'''
-#%% MAIN FFT
-w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
-freqArray, fftp = ft.fftMultipleFiles(w)
-#arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
-#%% LINE PLOT
-for i in range(len(fftp)):
-    fig, axs = plt.subplots(ncols = 1)
-    intenVal = 10*log10(fftp[i])
-    sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
-
-#plt.show()
-'''
-
-#%%
-def seaFFT():
-    #%% MAIN FFT
-    w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
+#%% FFT
+def seaFFT(w, nameOfFiles):
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
@@ -52,14 +36,12 @@ def seaFFT():
         fig, axs = plt.subplots(ncols = 1)
         intenVal = 10*log10(fftp[i])
         sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
-        plt.xlabel("Frequency (Hertz)")
-        plt.ylabel("Intensity (Decibels)")
+        plt.ylabel(str(input('Enter y-axis label')))
+        plt.xlabel(str(input('Enter x-axis label')))
+        plt.title(nameOfFiles[i])
+        #plt.show()
 
 
 #%% SPECTROGRAM
-
-
-
-
 
 

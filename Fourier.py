@@ -18,6 +18,7 @@ import mpld3
 from scipy import stats
 import wavio
 
+#http://myinspirationinformation.com/uncategorized/audio-signals-in-python/
 
 class Fourier:
     

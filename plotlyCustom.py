@@ -24,7 +24,42 @@ from tkinter import filedialog
 
 # custom module below
 from Fourier import Fourier
-import FourierAnalysisToolsForPackage as ft
+import FourierAnalysisTools as ft
+
+
+def plotlyFFT(w, nameOfFiles):
+    freqArray, fftp = ft.fftMultipleFiles(w)
+    #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
+
+    for i in range(len(w)):
+        fig = go.Figure()
+        title = str(input("Enter the title of the graph"))
+        fig.add_trace(go.Scatter(
+            x = (freqArray[i]),
+            y = 10*log10(fftp[i])
+        ))
+        fig.update_layout(
+            title=title
+        )
+        fig.update_xaxes(title_text='Frequency (Hertz)')
+        fig.update_yaxes(title_text='Intensity (Decibels)')
+
+        fig.show()
+
+def plotlyWaveform(w, nameOfFiles):
+    for i in range(len(w)):
+        timeLen = arange(0, w[i].data.shape[0], 1)
+        timeLen = timeLen/w[i].rate
+        y = w[i].data[:,0]
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x = timeLen,
+            y = y
+        ))
+
+        fig.show()
+
+
 
 '''
 #%% MAIN FFT
@@ -55,34 +90,3 @@ for i in range(len(figs)):
 for i in range(len(figs)):
     figs[i]
 '''
-
-#%%
-def plotlyFFT():
-    #%% MAIN FFT
-    w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
-    freqArray, fftp = ft.fftMultipleFiles(w)
-    #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
-
-    figs = []
-    for i in range(len(fftp)):
-        fig = go.Figure()
-        figs.append(fig)
-
-    for i in range(len(figs)):
-        figs[i]
-        title = str(input("Enter the title of the graph"))
-        figs[i].add_trace(go.Scatter(
-            x = (freqArray[i]),
-            y = 10*log10(fftp[i])
-            #name = nameOfFiles[i]
-        ))
-        figs[i].update_layout(
-            title=title
-        )
-        figs[i].update_xaxes(title_text='Frequency (Hertz)')
-        figs[i].update_yaxes(title_text='Intensity (Decibels)')
-        
-    for i in range(len(figs)):
-        return figs[i]
-
-# %%
