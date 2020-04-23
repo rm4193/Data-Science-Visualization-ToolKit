@@ -9,7 +9,7 @@ from matplotlib.pyplot import xcorr
 import scipy.fftpack
 import pandas as pd
 from scipy import stats
-import wavio
+#import wavio
 from bokeh.io import show, output_notebook
 from bokeh.models import (
     ColumnDataSource,
