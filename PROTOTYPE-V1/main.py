@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.style as style
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
-import chart_studio.plotly as py
+#import chart_studio.plotly as py
 from pydub import AudioSegment # immutable objects
 from scipy import stats
 import wavio
