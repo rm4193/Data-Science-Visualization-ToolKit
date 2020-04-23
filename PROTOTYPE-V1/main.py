@@ -1,4 +1,5 @@
 #%% IMPORTING PACKAGES (click shift+enter to run cell)
+'''
 from pylab import*
 from scipy.io import wavfile
 from scipy import signal
@@ -17,6 +18,8 @@ import seaborn as sns
 
 import tkinter as tk
 from tkinter import filedialog
+
+'''
 
 # custom module below
 from Fourier import Fourier

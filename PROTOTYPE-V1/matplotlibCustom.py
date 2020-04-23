@@ -12,9 +12,9 @@ import matplotlib.style as style
 import plotly.express as px
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
-import chart_studio.plotly as py
-from pydub import AudioSegment # immutable objects
-import mpld3
+#import chart_studio.plotly as py
+#from pydub import AudioSegment # immutable objects
+#import mpld3
 from scipy import stats
 import wavio
 import seaborn as sns

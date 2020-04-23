@@ -8,8 +8,6 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import xcorr
 import scipy.fftpack
 import pandas as pd
-from pydub import AudioSegment # immutable objects
-import mpld3
 from scipy import stats
 import wavio
 from bokeh.io import show, output_notebook
@@ -24,8 +22,8 @@ from bokeh.models import (
 )
 from bokeh.plotting import figure, show, output_notebook
 from bokeh.palettes import BuPu
-import holoviews as hv #There is a reason we have to do this here but its not important. Holoviews is the next library
-hv.extension('bokeh')
+#import holoviews as hv #There is a reason we have to do this here but its not important. Holoviews is the next library
+#hv.extension('bokeh')
 
 import tkinter as tk
 from tkinter import filedialog
