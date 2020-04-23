@@ -111,3 +111,6 @@ def heatMapWavelet(coeffs, nameOfFiles):
 
     
     
+
+
+# %%
