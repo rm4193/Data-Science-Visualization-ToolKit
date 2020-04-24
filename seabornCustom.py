@@ -1,5 +1,6 @@
 #%% IMPORTING PACKAGES
-from pylab import*
+#from pylab import*
+from matplotlib.pylab import *
 from scipy.io import wavfile
 from scipy.signal import correlate
 from scipy import signal
