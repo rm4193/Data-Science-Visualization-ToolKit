@@ -24,7 +24,7 @@ from Fourier import Fourier # custom module
 
 #%% FUNCTION TO LOAD FILES AND THE NAMES OF FILES IN ARRAYS
 def fileLoading():
-    call = int(input("Enter the number of files you want to analyze"))
+    call = int(input("Enter the number of WAV files you want to analyze"))
     w = [None]*call
     root = tk.Tk()
     nameOfFiles = [None]*call

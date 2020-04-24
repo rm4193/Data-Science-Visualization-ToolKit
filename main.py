@@ -30,10 +30,14 @@ import seabornCustom as seaCustom
 import waveletFunction as waveletF
 import bokeh_tools as bokeh
 
+print("All packages have been imported successfully!")
+
 
 
 #%% Choose files and name the files (click shift+enter to run cell)
 w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
+print("All WAV files have been imported successfully!")
+
 
 #%% Visualization tool choice section (click shift+enter to run cell)
 options = ['Plotly FFT', 'Matplot FFT', 'Matplot Spectrogram', 'Seaborn FFT', 'Matplotlib contour plot of wavelet', 'Plotly Waveform', 'Bokeh FFT']
@@ -42,14 +46,14 @@ print("\n")
 for j in range(len(options)):
     print(options[j])
 
-num = int(input("How many DIFFERENT TYPES of graphs do you want? The types of graphs are shown below."))
+num = int(input("Please type the number of graphs styles that are required. The options are shown below."))
 
 for j in range(num):
-    print("\nSelect a number for the corresponding graph you want")
+    print("\nThe list of the different types of graphs:")
     for i in range(len(options)):
         print(str(i+1) + ":", options[i]) 
 
-    inp = int(input("Enter a number: "))
+    inp = int(input("Select a number for the corresponding graph you want. The options are shown below."))
 
     if inp == 1:
         print("\nUsing Plotly, here is the FFT: ")
