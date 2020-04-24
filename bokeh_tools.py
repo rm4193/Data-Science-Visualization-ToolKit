@@ -41,8 +41,8 @@ def bokehFFT(w, nameOfFiles):
         p = figure(title = nameOfFiles[i], plot_width = 800, plot_height = 800)
         intenVal = 10*log10(fftp[i])
         p.line(x = freqArray[i], y = intenVal)
-        p.xaxis[0].axis_label = 'Time' # change x-axis label
-        p.yaxis[0].axis_label = 'Frequency' # change y-axis label
+        p.xaxis[0].axis_label = 'Frequency' # change x-axis label
+        p.yaxis[0].axis_label = 'Intensity' # change y-axis label
         show(p)
 
 

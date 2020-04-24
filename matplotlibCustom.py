@@ -35,10 +35,10 @@ def matplotFFT(w, nameOfFiles):
     for i in range(len(fftp)):
         intenVal = 10*log10(fftp[i])
         fig = plt.figure()
-        ax = fig.add_subplot(1,2,1)
+        ax = fig.add_subplot(1,1,1)
         ax.plot(  freqArray[i], intenVal  )
-        ax.set_xlabel('Time') # change x-axis label
-        ax.set_ylabel('Frequency') # change y-axis label
+        ax.set_xlabel('Frequency') # change x-axis label
+        ax.set_ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
     
     plt.show()

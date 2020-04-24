@@ -43,8 +43,8 @@ def plotlyFFT(w, nameOfFiles):
             title=title
         )
 
-        fig.update_xaxes(title_text= 'Time' ) # change x-axis label
-        fig.update_yaxes(title_text= 'Frequency' ) # change y-axis label
+        fig.update_xaxes(title_text= 'Frequency' ) # change x-axis label
+        fig.update_yaxes(title_text= 'Intensity' ) # change y-axis label
 
         fig.show()
 

@@ -33,8 +33,8 @@ def seaFFT(w, nameOfFiles):
         fig, axs = plt.subplots(ncols = 1)
         intenVal = 10*log10(fftp[i])
         sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
-        plt.xlabel('Time') # change x-axis label
-        plt.ylabel('Frequency') # change y-axis label
+        plt.xlabel('Frequency') # change x-axis label
+        plt.ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
         plt.show()
 
