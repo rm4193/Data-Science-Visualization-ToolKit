@@ -17,7 +17,7 @@ rem Anaconda prompt shell address: "C:\Users\BA_INTERN\AppData\Roaming\Microsoft
 rem START OF BATCH FILE BELOW
 
 rem First find where Anaconda prompt is to use pip
-set root=%HOMEDRIVE%\Users\%USERNAME%AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\Anaconda Prompt (Anaconda3).lnk
+set root=%HOMEDRIVE%\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\Anaconda Prompt (Anaconda3).lnk
 
 rem Call Anaconda prompt
 call root
