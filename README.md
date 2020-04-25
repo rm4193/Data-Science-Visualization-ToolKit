@@ -3,7 +3,7 @@ This is a Python toolkit that provides a compilation of different visualization 
 
 **CURRENTLY ONLY FOR WINDOWS 10**
 
-Installation Procedure
+# Installation Procedure
 
 **1. Download Anaconda and install:** https://repo.anaconda.com/archive/Anaconda3-2020.02-Windows-x86_64.exe
   
