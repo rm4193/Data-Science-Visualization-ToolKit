@@ -9,13 +9,14 @@ Address: C:\Users\ACTUAL_USERNAME\anaconda3
 Register Anaconda3 as my default Python 3.7
 Can be slow on some devices
 
-Download the zip from the URL: https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
+**2.  Download the zip from the URL:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
 
-Run the example.bat script
+**3. Run the example.bat script:**
 
-Open anaconda navigator
-
+**4. Open anaconda navigator**
 Opening VSCode in Anaconda Navigator
+
+**5. Open the main.py file insi**
 Visual Studio Code: File > Open Folder > 
 Click the main.py file on the left
 Popup will say “Install Python Extension”
