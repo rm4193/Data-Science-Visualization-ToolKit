@@ -1,7 +1,7 @@
 # Data-Science-Visualization-ToolKit
 This is a Python toolkit that provides a compilation of different visualization tools to provide a simplified workflow for data scientists.
 
-**CURRENTLY ONLY FOR WINDOWS 10**
+### CURRENTLY ONLY FOR WINDOWS 10
 
 # Installation Procedure
 
