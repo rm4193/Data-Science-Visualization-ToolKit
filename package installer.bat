@@ -23,10 +23,6 @@ rem This was done by finding Anaconda Prompt location and searched its path in p
 call %HOMEDRIVE%\Users\%USERNAME%\Anaconda3\Scripts\activate.bat %HOMEDRIVE%\Users\%USERNAME%\Anaconda3
 
 rem use pip to install various packages
-pip install scipy
-pip install pandas
-pip install numpy
-pip install matplotlib
 pip install plotly
 pip install wavio
 pip install tkinter
@@ -37,6 +33,8 @@ pip install seaborn
 
 
 cls
+@echo All packages have been installed!
+@echo Press enter to exit
 pause
 
 
