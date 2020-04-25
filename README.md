@@ -11,7 +11,7 @@ This is a Python toolkit that provides a compilation of different visualization 
  
     b. Register Anaconda3 as my default Python 3.7
 
-**2.  Download the zip from the URL:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
+**2.  Download the toolkit using this link:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
 
     a. This zip file will contain all the files
 
