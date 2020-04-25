@@ -13,11 +13,9 @@ A Python toolkit that provides a compilation of different visualization tools to
 
 **2.  Download the toolkit using this link:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
 
-    a. This zip file will contain all the files for the toolkit
-    
-    b. 
+    a. This zip file will contain the folder for the toolkit  
 
-**3. Run the package_installer.bat:**
+**3. Run the package_installer.bat (located inside of the "Data-Science-Visualization-ToolKit" folder)**
 
     a. This will launch a terminal window, a script will run that will install all the packages that are needed. 
     
@@ -34,6 +32,9 @@ A Python toolkit that provides a compilation of different visualization tools to
     d. Close Visual Studio Code once the extension is installed.
 
 **5. Open the main.py file insi**
-Visual Studio Code: File > Open Folder > 
-Click the main.py file on the left
-Popup will say “Install Python Extension”
+
+    Visual Studio Code: File > Open Folder > 
+
+    Click the main.py file on the left
+
+    Popup will say “Install Python Extension”
