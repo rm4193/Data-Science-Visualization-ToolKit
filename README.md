@@ -1,7 +1,7 @@
 # Data-Science-Visualization-ToolKit
 This is a Python toolkit that provides a compilation of different visualization tools to provide a simplified workflow for data scientists
 
-Download Anaconda: https://repo.anaconda.com/archive/Anaconda3-2020.02-Windows-x86_64.exe
+**1. Download Anaconda**: https://repo.anaconda.com/archive/Anaconda3-2020.02-Windows-x86_64.exe
 
 Address: C:\Users\ACTUAL_USERNAME\anaconda3
 Register Anaconda3 as my default Python 3.7
