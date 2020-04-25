@@ -9,7 +9,7 @@ A Python toolkit that provides a compilation of different visualization tools to
   
     a. Address: C:\Users\ACTUAL_USERNAME\anaconda3
  
-    b. Register Anaconda3 as my default Python 3.7
+    b. Select "Register Anaconda3 as my default Python 3.7" on the Advanced Options page
 
 **2.  Download the toolkit using this link:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
 
