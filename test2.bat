@@ -1,5 +1,6 @@
 @echo off
 
+rem This is an installer of various packages automatically
 rem call C:\Users\%USERNAME%\Anaconda3/Scripts/activate.bat <anaconda_dir>
 rem call <anaconda_dir>/Scripts/activate.bat <anaconda_dir>
 
@@ -23,9 +24,9 @@ call %HOMEDRIVE%\Users\%USERNAME%\Anaconda3\Scripts\activate.bat %HOMEDRIVE%\Use
 
 rem use pip to install various packages
 pip install scipy
+pip install pandas
 pip install numpy
 pip install matplotlib
-pip install pandas
 pip install plotly
 pip install wavio
 pip install tkinter
