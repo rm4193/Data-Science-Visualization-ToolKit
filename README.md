@@ -21,7 +21,7 @@ A Python toolkit that provides a compilation of different visualization tools to
     
     b. This is located inside of Data-Science-Visualization-ToolKit\package_installer.bat
 
-**4. Search and open Visual Studio Code application (INCLUDED in the anaconda3 installer)** 
+**4. Search and open the Visual Studio Code application (INCLUDED in the anaconda3 installer)** 
     
     a. Navigate to the extensions section
     
