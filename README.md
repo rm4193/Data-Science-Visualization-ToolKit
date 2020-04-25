@@ -19,5 +19,3 @@ Opening VSCode in Anaconda Navigator
 Visual Studio Code: File > Open Folder > 
 Click the main.py file on the left
 Popup will say “Install Python Extension”
-
-Uninstall procedure
