@@ -15,7 +15,7 @@ This is a Python toolkit that provides a compilation of different visualization 
 
     a. This zip file will contain all the files
 
-**3. Run the example.bat script:**
+**3. Run the package_installer.bat:**
 
     a. 
 
