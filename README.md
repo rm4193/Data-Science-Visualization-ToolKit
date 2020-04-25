@@ -13,16 +13,23 @@ This is a Python toolkit that provides a compilation of different visualization 
 
 **2.  Download the toolkit using this link:** https://github.com/rm4193/Data-Science-Visualization-ToolKit/archive/PROTOTYPE.zip
 
-    a. This zip file will contain all the files
+    a. This zip file will contain all the files for the toolkit
     
     b. 
 
 **3. Run the package_installer.bat:**
 
-    a. This is located inside of Data-Science-Visualization-ToolKit\package_installer.bat
+    a. This will launch a terminal window, a script will run that will install all the packages that are needed. 
+    
+    b. This is located inside of Data-Science-Visualization-ToolKit\package_installer.bat
 
-**4. Open anaconda navigator**
-Opening VSCode in Anaconda Navigator
+**4. Search and open Visual Studio Code**
+    
+    a. Navigate to the extensions section
+    
+    b. Install the python extension
+    
+    c. Close Visual Studio Code once the extension is installed.
 
 **5. Open the main.py file insi**
 Visual Studio Code: File > Open Folder > 
