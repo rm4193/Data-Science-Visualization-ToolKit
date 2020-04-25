@@ -27,12 +27,7 @@ A Python toolkit that provides a compilation of different visualization tools to
     
     b. Install the python extension
     
-    c. Close Visual Studio Code once the extension is installed.
-
-**5. Open the main.py file insi**
-
-    Visual Studio Code: File > Open Folder > 
-
-    Click the main.py file on the left
-
-    Popup will say “Install Python Extension”
+## Points of Contact
+    
+    Rajat Mohanka - rajat.mohanka@gmail.com
+    David Lopez - dlopez@bmtdps.com 
