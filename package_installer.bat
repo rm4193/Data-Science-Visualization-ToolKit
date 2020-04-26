@@ -16,6 +16,8 @@ rem Anaconda prompt shell address: "C:\Users\BA_INTERN\AppData\Roaming\Microsoft
 
 
 rem START OF BATCH FILE BELOW
+rem downloading VS code
+start https://aka.ms/win32-x64-user-stable
 
 rem First find where Anaconda prompt is to use pip
 rem Then call Anaconda prompt
