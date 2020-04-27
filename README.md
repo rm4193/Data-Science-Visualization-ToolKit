@@ -17,7 +17,7 @@ A Python toolkit that provides a compilation of different visualization tools to
 
 **3. Run the package_installer.bat (located inside of the "Data-Science-Visualization-ToolKit" folder)**
 
-    a. This will launch a terminal window, a script will run that will install all the packages that are needed. 
+    a. This will launch a terminal window, a script will run that will install VS code and all the packages that are needed. 
     
     b. This is located inside of Data-Science-Visualization-ToolKit\package_installer.bat
 
