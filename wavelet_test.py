@@ -105,43 +105,101 @@ fig.update_yaxes(title_text='Intensity (dB)')
 
 
 
-#%% FASTER MULTIPLE STFT (fix)
-#ZOOM31 - AS 1
-#ZOOM33 - HOCM OBS 1
-#ZOOM42 - AS 2
-#ZOOM47 - HOCM OBS 3
-w = ft.fileLoading()
+#%%
+
+#%% IMPORTING PACKAGES
+from pylab import*
+from scipy.io import wavfile
+from scipy.signal import correlate
+from scipy import signal
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import xcorr
+import scipy.fftpack
+import pandas as pd
+import matplotlib.style as style
+import plotly.express as px
+import plotly.graph_objs as go
+import plotly.figure_factory as ff
+import chart_studio.plotly as py
+from pydub import AudioSegment # immutable objects
+import mpld3
+from scipy import stats
+import wavio
+import seaborn as sns
+import pywt
+import scaleogram as scale
+
+import tkinter as tk
+from tkinter import filedialog
+
+# custom module below
+from Fourier import Fourier
+import FourierAnalysisTools as ft
+
+#%%
 sig = []
 rate = []
 sampPeriod = []
 timeArray = []
-w1_chunks1 = []
-numOfChunks = 4
+coeffs = []
+freqs = []
+w, nameOfFiles = ft.fileLoading()
 
-freqArray1 = []
-fftp1 = []
-
+#%%
 for i in range(len(w)):
     sig.append(w[i].data[:,0])
     rate.append(w[i].rate)
     sampPeriod.append(1/rate[i])
-    timeArray.append(ft.timeList(w))
-    w1_chunks1.append(ft.chunkIt(w[i], timeArray[i], numOfChunks))
-    freq, fft = ft.scanningFFTOneFile(w1_chunks1[i], rate[i])
-    freqArray1.append(freq)
-    fftp1.append(fft)
+    timeArray.append(ft.timeList(w[i]))
 
-for i in range(len(fftp1)):
-    fig = go.Figure()
-    title = str(input("Enter the title of the graph"))
-    fig.add_trace(go.Scatter(
-        x = freqArray1[i],
-        y = 10*log10(fftp1[i])
-    ))
+# Wavelet calculation
+minScaleLimit = 80
+maxScaleLimit = 2000
+widths = np.arange(minScaleLimit, maxScaleLimit)
+# widths = np.arange(10, 1000)
+for i in range(len(w)):
+    tempCoeffs, tempFreqs = scale.fastcwt(sig[i], widths, 'morl', sampling_period=sampPeriod[i])
+    coeffs.append(tempCoeffs)
+    freqs.append(tempFreqs)
+    # converting scale coefficents to frequency: 
+    #pywt.scale2frequency('morl', widths) / (sampPeriod)
+    #normalCoeffs = coeffs
+    #coeffs[:,0] = freqs
 
-    fig.update_layout(
-        title=title,
-    )
+#%%
+power = []
+normalizedCoeffs = []
+normalizedPower = []
+perc = []
+sumT = 0
+for i in range(len(coeffs)):
+    power.append((abs(coeffs[i])) ** 2) # arbitrary units for energy
+    normalizedCoeffs.append(coeffs[i]/np.abs(coeffs[i]).max()) # normalization factor of the coefficients
+    normalizedPower.append(power[i]/np.abs(power[i]).max())
 
-    fig.update_xaxes(title_text='Frequency (Hz)')
-    fig.update_yaxes(title_text='Intensity (dB)')
+# the below for loop needs to be fixed to accomodate for percentage of energy of each coefficient
+newT = 0
+for i in range(len(power)):
+    100*power[i]
+    for j in range(len(power[i])):
+        sumT = sumT + power[i]
+        newT = newT + ((100*power[i])/sumT)
+    perc.append(newT)
+
+for i in range(len(coeffs)):
+    #plt.contourf(timeArray[i], freqs[i], normalizedPower[i], cmap='hot')
+    plt.contourf(timeArray[i], freqs[i], normalizedCoeffs[i], cmap='hot')
+    #plt.contourf(timeArray[i], freqs[i], coeffs[i], cmap='hot')
+    #plt.contourf(timeArray[i], freqs[i], power[i], cmap='hot')
+    
+    plt.colorbar()
+    plt.title(nameOfFiles[i])
+    #plt.xlabel(str(input("Enter x axis name for contour plot: ")))
+    plt.xlabel("Time (ms)")
+    #plt.ylabel(str(input("Enter y axis name for contour plot: ")))
+    plt.ylabel("Frequency (Hz)")
+    plt.show()
+    #plt.yscale('log')
+
+# %%
