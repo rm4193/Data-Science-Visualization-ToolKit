@@ -19,6 +19,7 @@ import plotly.figure_factory as ff
 from scipy import stats
 import wavio
 import seaborn as sns
+import gc
 
 import tkinter as tk
 from tkinter import filedialog
@@ -46,6 +47,8 @@ def matplotFFT(w, nameOfFiles):
 
 #%%
 def matplotSpectrogram(w, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
     freqArray, fftp = ft.fftMultipleFiles(w)
 
     for i in range(len(fftp)):
@@ -54,6 +57,9 @@ def matplotSpectrogram(w, nameOfFiles):
         ax.set_xlabel('Time') # change x-axis label
         ax.set_ylabel('Frequency') # change y-axis label
         plt.title(nameOfFiles[i])
+
+        # choose the directory path you want to save the files in:
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_spect'+'.png')
 
 
 

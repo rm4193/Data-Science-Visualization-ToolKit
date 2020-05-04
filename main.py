@@ -1,27 +1,5 @@
 #%% IMPORTING PACKAGES (click shift+enter to run cell)
-'''
-from pylab import*
-from scipy.io import wavfile
-from scipy import signal
-import numpy as np
-import matplotlib.pyplot as plt
-import scipy.fftpack
-import pandas as pd
-import matplotlib.style as style
-import plotly.graph_objs as go
-import plotly.figure_factory as ff
-#import chart_studio.plotly as py
-#from pydub import AudioSegment # immutable objects
-from scipy import stats
-import wavio
-import seaborn as sns
 
-import tkinter as tk
-from tkinter import filedialog
-
-'''
-
-# custom module below
 from Fourier import Fourier
 import FourierAnalysisTools as ft
 import matplotlibCustom as matCustom
@@ -31,7 +9,6 @@ import waveletFunction as waveletF
 import bokeh_tools as bokeh
 
 print("All packages have been imported successfully!")
-
 
 
 #%% Choose files and name the files (click shift+enter to run cell)

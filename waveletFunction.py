@@ -21,6 +21,7 @@ from scipy import stats
 import seaborn as sns
 import pywt
 import scaleogram as scale
+import gc
 
 import tkinter as tk
 from tkinter import filedialog
@@ -31,6 +32,7 @@ import FourierAnalysisTools as ft
 
 #%%
 def wavelets(w, nameOfFiles):
+    print("Please wait a moment to be directed for next steps")
     sig = []
     rate = []
     sampPeriod = []
@@ -62,6 +64,8 @@ def wavelets(w, nameOfFiles):
 
 
 def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib wavelet contour plots')
     power = []
     normalizedCoeffs = []
     normalizedPower = []
@@ -81,7 +85,9 @@ def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
         plt.xlabel("Time (ms)") # change x-axis label
         #plt.ylabel(str(input("Enter y axis name for contour plot: "))) 
         plt.ylabel("Frequency (Hz)") # change y-axis label
-        plt.show()
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_wavelet_contour'+'.png')
+        plt.close(fig=None)
+        #gc.collect()
         #plt.yscale('log')
 
 

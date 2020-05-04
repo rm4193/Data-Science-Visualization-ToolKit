@@ -23,16 +23,17 @@ import tkinter as tk
 from tkinter import filedialog
 from Fourier import Fourier # custom module
 
+# new packages to add in batch file
+import glob
+import os
+
 #%% FUNCTION TO LOAD FILES AND THE NAMES OF FILES IN ARRAYS
 def fileLoading():
-    call = int(input("Enter the number of WAV files you want to analyze"))
-    w = [None]*call
     root = tk.Tk()
-    nameOfFiles = [None]*call
-
-    for i in range(call):
-        root.fileName = filedialog.askopenfilename( filetypes = (("Wave files", "*.wav"), ("All files", "*.*")) )
-        w[i] = root.fileName
+    dirname = filedialog.askdirectory(title='Please select a directory of WAV files you want to analyze')
+    newDirName = os.path.normpath(dirname) # converts tkinter directory path to normal OS path labeling
+    w = list(glob.glob(os.path.join(newDirName, '*.wav')))
+    nameOfFiles = [None]*len(w)
     
     '''
     #reversing the string
@@ -50,15 +51,16 @@ def fileLoading():
         nameOfFiles[i] = str(input("Enter the name of this file"))
         w[i] = root.fileName
     '''
+    #renaming the files brute force
     for i in range(len(w)):
-        lastChar_index = w[i].rfind("/") # finds the index of the last occurrence of the input value
+        lastChar_index = w[i].rfind("\\") # finds the index of the last occurrence of the input value - need to change per OS
         temp = w[i][lastChar_index+1:]
         secChar_index = temp.rfind(".")
         realName = temp[:secChar_index]
         nameOfFiles[i] = realName
         #res = re.findall(r'\w')
         #res = re.search('(.WAV|.wav)', fname) # looks for upper or lowercase .wav files
-    
+
     for i in range(len(w)):
         w[i] = wavio.read(w[i]) # an array of wavio files
     return w, nameOfFiles

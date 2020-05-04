@@ -22,9 +22,41 @@ import seaborn as sns
 import tkinter as tk
 from tkinter import filedialog
 
+# new packages to add in batch file
+import glob
+import os
+
+
 # custom module below
 from Fourier import Fourier
 import FourierAnalysisTools as ft
+
+
+# %%
+root = tk.Tk()
+dirname = filedialog.askdirectory(title='Please select a directory')
+newDirName = os.path.normpath(dirname)
+w = list(glob.glob(os.path.join(newDirName, '*.wav')))
+nameOfFiles = [None]*len(w)
+
+#%%
+#renaming the files brute force
+for i in range(len(w)):
+    lastChar_index = w[i].rfind("\\") # finds the index of the last occurrence of the input value - need to change per OS
+    temp = w[i][lastChar_index+1:]
+    secChar_index = temp.rfind(".")
+    realName = temp[:secChar_index]
+    nameOfFiles[i] = realName
+    #res = re.findall(r'\w')
+    #res = re.search('(.WAV|.wav)', fname) # looks for upper or lowercase .wav files
+
+for i in range(len(w)):
+    w[i] = wavio.read(w[i]) # an array of wavio files
+
+#%%
+w
+
+
 
 #%%
 w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
@@ -43,5 +75,3 @@ for i in range(len(fftp)):
     plt.title(nameOfFiles[i])
 
 plt.show()
-
-# %%

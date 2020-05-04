@@ -27,17 +27,24 @@ import FourierAnalysisTools as ft
 
 #%% FFT
 def seaFFT(w, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
     for i in range(len(fftp)):
-        fig, axs = plt.subplots(ncols = 1)
         intenVal = 10*log10(fftp[i])
-        sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
+        
+        #fig, axs = plt.subplots(ncols = 1)
+        plt.figure(figsize=(20,10))
+        #sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
+        sns.lineplot(x = freqArray[i], y = intenVal)
+        
         plt.xlabel('Frequency') # change x-axis label
         plt.ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
-        plt.show()
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_seaborn_fft'+'.png')
+        plt.close()
 
 
 #%% SPECTROGRAM
