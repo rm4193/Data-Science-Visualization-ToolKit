@@ -10,6 +10,11 @@ pip uninstall wavio
 pip uninstall tkinter
 pip uninstall pywt
 pip uninstall scaleogram
+pip uninstall altair
+pip uninstall altair_viewer
+pip uninstall altair_saver
+pip uninstall selenium
+pip uninstall modin[all]
 
 
 cls

@@ -30,6 +30,13 @@ pip install wavio
 pip install tkinter
 pip install pywt
 pip install scaleogram
+pip install altair
+pip install altair_viewer
+pip install altair_saver
+pip install modin[all]
+rem to install dependencies for bokeh
+pip install selenium
+conda install -c bokeh/channel/dev bokeh
 
 
 cls

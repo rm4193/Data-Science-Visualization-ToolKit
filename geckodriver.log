@@ -1,0 +1,77 @@
+1588706754387	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofiledjSyMI"
+*** You are running in headless mode.
+1588706755319	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588706755893	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588706755894	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588706755894	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588706755894	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588706757684	Marionette	INFO	Listening on port 56159
+1588706758041	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588706877660	Marionette	INFO	Stopped listening on port 56159
+1588706908659	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofilenfaIu8"
+*** You are running in headless mode.
+1588706908965	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588706909464	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588706909465	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588706909465	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588706909465	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588706910535	Marionette	INFO	Listening on port 56319
+1588706910666	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588708213954	Marionette	INFO	Stopped listening on port 56319
+1588708643859	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofile6y0wDs"
+*** You are running in headless mode.
+1588708644179	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588708644674	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588708644674	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588708644675	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588708644675	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588708646036	Marionette	INFO	Listening on port 56948
+1588708646473	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588708932820	Marionette	INFO	Stopped listening on port 56948
+1588779407072	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofiletIOBTn"
+*** You are running in headless mode.
+1588779407472	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588779407847	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588779407847	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588779407847	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588779407847	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588779409080	Marionette	INFO	Listening on port 62113
+1588779409090	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588779712013	Marionette	INFO	Stopped listening on port 62113
+1588779736910	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofileJsQ5NL"
+*** You are running in headless mode.
+1588779737240	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588779737738	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588779737738	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588779737738	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588779737738	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588779738829	Marionette	INFO	Listening on port 62334
+1588779738920	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588780381231	Marionette	INFO	Stopped listening on port 62334
+1588780406801	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofileFCMEb6"
+*** You are running in headless mode.
+1588780407138	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588780407626	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588780407626	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588780407626	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588780407626	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588780408699	Marionette	INFO	Listening on port 62660
+1588780409020	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588786883899	Marionette	INFO	Stopped listening on port 62660
+1588788125587	mozrunner::runner	INFO	Running command: "C:\\Users\\BA_INTERN\\Anaconda3\\Library\\bin\\firefox.exe" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\BA_INT~1\\AppData\\Local\\Temp\\rust_mozprofileGO6A1M"
+*** You are running in headless mode.
+1588788125900	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588788126398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588788126398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588788126399	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588788126399	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588788127452	Marionette	INFO	Listening on port 49598
+1588788127801	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588788549949	Marionette	INFO	Stopped listening on port 49598

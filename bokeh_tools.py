@@ -11,7 +11,7 @@ import scipy.fftpack
 import pandas as pd
 from scipy import stats
 #import wavio
-from bokeh.io import show, output_notebook
+from bokeh.io import show, output_notebook, export_png
 from bokeh.models import (
     ColumnDataSource,
     HoverTool,
@@ -35,6 +35,9 @@ import FourierAnalysisTools as ft
 
 #%%
 def bokehFFT(w, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your bokeh FFT graphs')
+
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
@@ -44,7 +47,8 @@ def bokehFFT(w, nameOfFiles):
         p.line(x = freqArray[i], y = intenVal)
         p.xaxis[0].axis_label = 'Frequency' # change x-axis label
         p.yaxis[0].axis_label = 'Intensity' # change y-axis label
-        show(p)
+        export_png(p, filename=dirname+'/'+nameOfFiles[i]+'_bokeh_FFT'+'.png')
+        #show(p)
 
 
 #%% SPECTROGRAM

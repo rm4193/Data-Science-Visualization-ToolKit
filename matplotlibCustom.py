@@ -31,6 +31,8 @@ import FourierAnalysisTools as ft
 
 #%% 
 def matplotFFT(w, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib FFT graphs')
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
@@ -42,10 +44,15 @@ def matplotFFT(w, nameOfFiles):
         ax.set_xlabel('Frequency') # change x-axis label
         ax.set_ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
-    
-    plt.show()
+        
+        # choose the directory path you want to save the files in:
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_matplot_FFT'+'.png')
 
-#%%
+        # outputting the graph in VS code cells
+        plt.show()
+    
+
+#%% spectrogram of wav files
 def matplotSpectrogram(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
@@ -59,10 +66,41 @@ def matplotSpectrogram(w, nameOfFiles):
         plt.title(nameOfFiles[i])
 
         # choose the directory path you want to save the files in:
-        plt.savefig(dirname+'/'+nameOfFiles[i]+'_spect'+'.png')
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_matplot_spectrogram'+'.png')
+
+        # outputting the graph in VS code cells
+        plt.show()
 
 
+#%% contour plots of wavelets
+def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
+    root = tk.Tk()
+    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib wavelet contour plots')
+    power = []
+    normalizedCoeffs = []
+    normalizedPower = []
+    for i in range(len(coeffs)):
+        power.append((abs(coeffs[i])) ** 2) # used to show just the positive wavelets
+        normalizedCoeffs.append(coeffs[i]/np.abs(coeffs[i]).max()) # normalization factor of the coefficients
+        normalizedPower.append(power[i]/np.abs(power[i]).max())
+    for i in range(len(coeffs)):
+        #plt.contourf(timeArray[i], freqs[i], normalizedPower[i], cmap='hot')
+        plt.contourf(timeArray[i], freqs[i], normalizedCoeffs[i], cmap='hot')
+        #plt.contourf(timeArray[i], freqs[i], coeffs[i], cmap='hot')
+        #plt.contourf(timeArray[i], freqs[i], power[i], cmap='hot')
+        
+        plt.colorbar()
+        plt.title(nameOfFiles[i])
+        #plt.xlabel(str(input("Enter x axis name for contour plot: "))) 
+        plt.xlabel("Time (ms)") # change x-axis label
+        #plt.ylabel(str(input("Enter y axis name for contour plot: "))) 
+        plt.ylabel("Frequency (Hz)") # change y-axis label
 
+        # choose the directory path you want to save the files in:
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_matplot_wavelet_contour'+'.png')
+        plt.close(fig=None)
+        #gc.collect()
+        #plt.yscale('log')
 
 #%%
 '''

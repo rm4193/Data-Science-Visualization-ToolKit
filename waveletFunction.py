@@ -85,7 +85,9 @@ def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
         plt.xlabel("Time (ms)") # change x-axis label
         #plt.ylabel(str(input("Enter y axis name for contour plot: "))) 
         plt.ylabel("Frequency (Hz)") # change y-axis label
-        plt.savefig(dirname+'/'+nameOfFiles[i]+'_wavelet_contour'+'.png')
+
+        # choose the directory path you want to save the files in:
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_matplot_wavelet_contour'+'.png')
         plt.close(fig=None)
         #gc.collect()
         #plt.yscale('log')

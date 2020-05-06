@@ -31,6 +31,18 @@ import os
 from Fourier import Fourier
 import FourierAnalysisTools as ft
 
+#%%
+w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
+freqArray, fftp = ft.fftMultipleFiles(w)
+for i in range(len(w)):
+    inten = 10*log10(fftp[i])
+    powerSpectrum, frequenciesFound, time, imageAxis = plt.specgram(w[i].data[:,0], Fs = w[i].rate)
+    plt.show()
+
+
+
+
+
 
 # %%
 root = tk.Tk()

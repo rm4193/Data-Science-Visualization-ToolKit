@@ -28,7 +28,7 @@ import FourierAnalysisTools as ft
 #%% FFT
 def seaFFT(w, nameOfFiles):
     root = tk.Tk()
-    dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
+    dirname = filedialog.askdirectory(title='Please select a directory to save your seaborn FFT graphs')
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
@@ -43,10 +43,17 @@ def seaFFT(w, nameOfFiles):
         plt.xlabel('Frequency') # change x-axis label
         plt.ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
-        plt.savefig(dirname+'/'+nameOfFiles[i]+'_seaborn_fft'+'.png')
-        plt.close()
+
+        # choose the directory path you want to save the files in:
+        plt.savefig(dirname+'/'+nameOfFiles[i]+'_seaborn_FFT'+'.png')
+        plt.close(fig=None)
 
 
 #%% SPECTROGRAM
-
+'''
+def seaSpect(w, nameOfFiles):
+    for i in range(len(w)):
+        f, t, Sxx = signal.spectrogram(w[i].data[:,0], Fs = w[i].rate)
+        sns.heatmap()
+'''
 
