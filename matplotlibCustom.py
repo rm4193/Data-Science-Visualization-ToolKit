@@ -57,10 +57,11 @@ def matplotFFT(w, nameOfFiles):
 def matplotSpectrogram(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
-    
+    minfreq=20
+    maxfreq=2000
     for i in range(len(w)):
         fig, ax = plt.subplots(nrows = 1)
-        powerSpectrum, frequenciesFound, time, im = over.my_specgram(w[i].data[:,0], Fs = w[i].rate, cmap= 'hot', minfreq=20, maxfreq=800)
+        powerSpectrum, frequenciesFound, time, im = over.my_specgram(w[i].data[:,0], Fs = w[i].rate, cmap= 'hot', minfreq=minfreq, maxfreq=maxfreq)
         ax.set_xlabel('Time') # change x-axis label
         ax.set_ylabel('Frequency') # change y-axis label
         plt.title(nameOfFiles[i])
