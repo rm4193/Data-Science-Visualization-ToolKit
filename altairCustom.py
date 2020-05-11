@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import xcorr
 import scipy.fftpack
 
-import os
+#import os
 
-os.environ["MODIN_ENGINE"] = "dask"  # Modin will use Dask - works better for windows
-import modin.pandas as pd
-#import pandas as pd
+#os.environ["MODIN_ENGINE"] = "dask"  # Modin will use Dask - works better for windows
+#import modin.pandas as pd
+import pandas as pd
 import matplotlib.style as style
 from scipy import stats
 import wavio
