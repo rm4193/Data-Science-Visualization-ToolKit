@@ -27,6 +27,7 @@ from tkinter import filedialog
 # custom module below
 from Fourier import Fourier
 import FourierAnalysisTools as ft
+import override_matplotlib_spect as over
 
 
 #%% 
@@ -56,11 +57,10 @@ def matplotFFT(w, nameOfFiles):
 def matplotSpectrogram(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
-    freqArray, fftp = ft.fftMultipleFiles(w)
-
-    for i in range(len(fftp)):
+    
+    for i in range(len(w)):
         fig, ax = plt.subplots(nrows = 1)
-        powerSpectrum, frequenciesFound, time, imageAxis = ax.specgram(w[i].data[:,0], Fs = w[i].rate)
+        powerSpectrum, frequenciesFound, time, im = over.my_specgram(w[i].data[:,0], Fs = w[i].rate, cmap= 'hot', minfreq=20, maxfreq=800)
         ax.set_xlabel('Time') # change x-axis label
         ax.set_ylabel('Frequency') # change y-axis label
         plt.title(nameOfFiles[i])
@@ -68,8 +68,10 @@ def matplotSpectrogram(w, nameOfFiles):
         # choose the directory path you want to save the files in:
         plt.savefig(dirname+'/'+nameOfFiles[i]+'_matplot_spectrogram'+'.png')
 
+        # closing the graphs
+        plt.close()
         # outputting the graph in VS code cells
-        plt.show()
+        #plt.show()
 
 
 #%% contour plots of wavelets
