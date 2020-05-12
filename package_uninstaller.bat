@@ -15,6 +15,7 @@ pip uninstall altair_viewer
 pip uninstall altair_saver
 pip uninstall selenium
 pip uninstall modin[all]
+pip uninstall glob
 
 
 cls

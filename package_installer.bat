@@ -37,6 +37,7 @@ pip install modin[all]
 rem to install dependencies for bokeh
 pip install selenium
 conda install -c bokeh/channel/dev bokeh
+pip install glob
 
 
 cls
