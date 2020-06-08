@@ -16,6 +16,8 @@ pip uninstall altair_saver
 pip uninstall selenium
 pip uninstall modin[all]
 pip uninstall glob
+pip uninstall pyloudnorm
+pip uninstall soundfile
 
 
 cls

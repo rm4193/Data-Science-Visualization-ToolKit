@@ -25,6 +25,7 @@ rem This was done by finding Anaconda Prompt location and searched its path in p
 call %HOMEDRIVE%\Users\%USERNAME%\Anaconda3\Scripts\activate.bat %HOMEDRIVE%\Users\%USERNAME%\Anaconda3
 
 rem use pip to install various packages
+python -m pip install --upgrade pip
 pip install plotly
 pip install wavio
 pip install tkinter
@@ -38,6 +39,8 @@ rem to install dependencies for bokeh
 pip install selenium
 conda install -c bokeh/channel/dev bokeh
 pip install glob
+pip install pyloudnorm
+pip install soundfile
 rem extra
 
 
