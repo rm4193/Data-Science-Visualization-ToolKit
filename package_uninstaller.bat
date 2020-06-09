@@ -18,6 +18,7 @@ pip uninstall modin[all]
 pip uninstall glob
 pip uninstall pyloudnorm
 pip uninstall soundfile
+pip uninstall pillow
 
 
 cls

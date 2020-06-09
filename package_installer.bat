@@ -41,6 +41,7 @@ conda install -c bokeh/channel/dev bokeh
 pip install glob
 pip install pyloudnorm
 pip install soundfile
+pip install pillow
 rem extra
 
 
