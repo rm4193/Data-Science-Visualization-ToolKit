@@ -14,12 +14,12 @@ print("All packages have been imported successfully!")
 
 
 #%% Choose files and name the files (click shift+enter to run cell)
-w, nameOfFiles = ft.fileLoading() # creates an array of files and array of names for each file
+w, nameOfFiles = ft.fileLoading() # creates an array of wav files and array of names for each file
 print("All WAV files have been imported successfully!")
 
 
 #%% Visualization tool choice section (click shift+enter to run cell)
-options = ['Plotly FFT', 'Matplot FFT', 'Matplot Spectrogram', 'Seaborn FFT', 'Matplotlib contour plot of wavelet', 'Plotly Waveform', 'Bokeh FFT', 'Altair waveform', 'Altair FFT', 'LUFS calculation']
+options = ['Plotly FFT', 'Matplot FFT', 'Matplot Spectrogram', 'Seaborn FFT', 'Matplotlib contour plot of wavelet', 'Plotly Waveform', 'Bokeh FFT', 'Altair waveform', 'Altair FFT']
 print("The list of the different types of graphs:")
 print("\n")
 for j in range(len(options)):
@@ -64,16 +64,6 @@ for j in range(num):
     elif inp == 9:
         print("\nUsing Altair, here is your FFT:")
         altairM.altairFFT(w, nameOfFiles)
-    elif inp == 10:
-        print("\nPlease choose the first file directory")
-        # read in wav files from pink internal
-        internalPinkWav, internalPinkRate, internalPinkName = lufs.listOfAudioFiles()
-        print("\nPlease choose the second file directory")
-        # read in wav files from pink external
-        externalPinkWav, externalPinkRate, externalPinkName = lufs.listOfAudioFiles()
-        # save dataframe of lufs
-        yes = lufs.pairUp(internalPinkWav, internalPinkRate, internalPinkName, externalPinkWav, externalPinkRate, externalPinkName)
-        print("\nYour LUFS calculations are saved as CSV file in your chosen directory")
     else:
         print("invalid input!")
     
