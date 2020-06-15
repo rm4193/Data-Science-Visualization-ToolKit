@@ -31,6 +31,7 @@ def seaFFT(w, nameOfFiles):
     dirname = filedialog.askdirectory(title='Please select a directory to save your seaborn FFT graphs')
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
+    root.destroy()
 
     for i in range(len(fftp)):
         intenVal = 10*log10(fftp[i])

@@ -36,6 +36,7 @@ def matplotFFT(w, nameOfFiles):
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib FFT graphs')
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
+    root.destroy()
 
     for i in range(len(fftp)):
         intenVal = 10*log10(fftp[i])
@@ -59,6 +60,7 @@ def matplotSpectrogram(w, nameOfFiles):
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
     minfreq=20
     maxfreq=2000
+    root.destroy()
     for i in range(len(w)):
         fig, ax = plt.subplots(nrows = 1)
         powerSpectrum, frequenciesFound, time, im = over.my_specgram(w[i].data[:,0], Fs = w[i].rate, cmap= 'hot', minfreq=minfreq, maxfreq=maxfreq)
@@ -82,6 +84,8 @@ def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
     power = []
     normalizedCoeffs = []
     normalizedPower = []
+    root.destroy()
+
     for i in range(len(coeffs)):
         power.append((abs(coeffs[i])) ** 2) # used to show just the positive wavelets
         normalizedCoeffs.append(coeffs[i]/np.abs(coeffs[i]).max()) # normalization factor of the coefficients

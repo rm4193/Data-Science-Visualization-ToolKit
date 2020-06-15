@@ -34,6 +34,7 @@ def fileLoading():
     newDirName = os.path.normpath(dirname) # converts tkinter directory path to normal OS path labeling
     w = list(glob.glob(os.path.join(newDirName, '*.wav')))
     nameOfFiles = [None]*len(w)
+    root.destroy()
     
     '''
     #reversing the string

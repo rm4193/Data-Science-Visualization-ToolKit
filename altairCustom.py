@@ -62,6 +62,7 @@ def altairFFT(w, nameOfFiles):
 
     alt.data_transformers.disable_max_rows()
     freqArray, fftp = ft.fftMultipleFiles(w)
+    root.destroy()
 
     for i in range(len(w)):
         intenVal = 10*log10(fftp[i])
@@ -84,6 +85,7 @@ def altairFFT(w, nameOfFiles):
 def altairSpect(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib FFT graphs')
+    root.destroy()
 
     alt.data_transformers.disable_max_rows()
     for i in range(len(w)):

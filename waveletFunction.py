@@ -69,6 +69,8 @@ def contourWavelet(coeffs, timeArray, freqs, nameOfFiles):
     power = []
     normalizedCoeffs = []
     normalizedPower = []
+    root.destroy()
+
     for i in range(len(coeffs)):
         power.append((abs(coeffs[i])) ** 2) # used to show just the positive wavelets
         normalizedCoeffs.append(coeffs[i]/np.abs(coeffs[i]).max()) # normalization factor of the coefficients

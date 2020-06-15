@@ -40,6 +40,7 @@ def bokehFFT(w, nameOfFiles):
 
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
+    root.destroy()
 
     for i in range(len(fftp)):
         p = figure(title = nameOfFiles[i], plot_width = 800, plot_height = 800)
