@@ -24,6 +24,11 @@ from tkinter import filedialog
 from Fourier import Fourier
 import FourierAnalysisTools as ft
 
+#%%
+def find_nearest( array, value  ):
+    array = np.asarray(array)
+    idx = ( np.abs( array - value)).argmin()
+    return idx
 
 #%% FFT
 def seaFFT(w, nameOfFiles):
@@ -33,13 +38,23 @@ def seaFFT(w, nameOfFiles):
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
     root.destroy()
 
+    minfreq=20 # change the number to whatever minimum frequency you want to see
+    maxfreq=3000 # change the number to whatever maximum frequency you want to see
+
     for i in range(len(fftp)):
         intenVal = 10*log10(fftp[i])
         
         #fig, axs = plt.subplots(ncols = 1)
         plt.figure(figsize=(20,10))
         #sns.lineplot(x = freqArray[i], y = intenVal, ax = axs)
-        sns.lineplot(x = freqArray[i], y = intenVal)
+
+        minfreqIndex = find_nearest( freqArray[i], minfreq   ) 
+        maxfreqIndex = find_nearest( freqArray[i], maxfreq ) 
+
+        freqRange = freqArray[i][minfreqIndex:maxfreqIndex+1]
+        intenVal = intenVal[minfreqIndex:maxfreqIndex+1]
+
+        sns.lineplot(x = freqRange, y = intenVal)
         
         plt.xlabel('Frequency') # change x-axis label
         plt.ylabel('Intensity') # change y-axis label

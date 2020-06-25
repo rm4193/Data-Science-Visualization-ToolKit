@@ -34,6 +34,13 @@ from Fourier import Fourier
 import FourierAnalysisTools as ft
 
 #%%
+def find_nearest( array, value  ):
+    array = np.asarray(array)
+    idx = ( np.abs( array - value)).argmin()
+    return idx
+
+
+#%%
 def bokehFFT(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your bokeh FFT graphs')
@@ -42,10 +49,20 @@ def bokehFFT(w, nameOfFiles):
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
     root.destroy()
 
+    minfreq=20 # change the number to whatever minimum frequency you want to see
+    maxfreq=3000 # change the number to whatever maximum frequency you want to see
+
     for i in range(len(fftp)):
         p = figure(title = nameOfFiles[i], plot_width = 800, plot_height = 800)
         intenVal = 10*log10(fftp[i])
-        p.line(x = freqArray[i], y = intenVal)
+
+        minfreqIndex = find_nearest( freqArray[i], minfreq   ) 
+        maxfreqIndex = find_nearest( freqArray[i], maxfreq ) 
+
+        freqRange = freqArray[i][minfreqIndex:maxfreqIndex+1]
+        intenVal = intenVal[minfreqIndex:maxfreqIndex+1]
+
+        p.line(x = freqRange, y = intenVal)
         p.xaxis[0].axis_label = 'Frequency' # change x-axis label
         p.yaxis[0].axis_label = 'Intensity' # change y-axis label
         export_png(p, filename=dirname+'/'+nameOfFiles[i]+'_bokeh_FFT'+'.png')

@@ -29,6 +29,13 @@ from Fourier import Fourier
 import FourierAnalysisTools as ft
 
 
+#%%
+def find_nearest( array, value  ):
+    array = np.asarray(array)
+    idx = ( np.abs( array - value)).argmin()
+    return idx
+    
+
 #%% waveform graph with altair
 def altairWaveform(w, nameOfFiles):
     root = tk.Tk()
@@ -64,11 +71,20 @@ def altairFFT(w, nameOfFiles):
     freqArray, fftp = ft.fftMultipleFiles(w)
     root.destroy()
 
+    minfreq=20 # change the number to whatever minimum frequency you want to see
+    maxfreq=3000 # change the number to whatever maximum frequency you want to see
+
     for i in range(len(w)):
         intenVal = 10*log10(fftp[i])
 
+        minfreqIndex = find_nearest( freqArray[i], minfreq   ) 
+        maxfreqIndex = find_nearest( freqArray[i], maxfreq ) 
+
+        freqRange = freqArray[i][minfreqIndex:maxfreqIndex+1]
+        intenVal = intenVal[minfreqIndex:maxfreqIndex+1]
+
         source = pd.DataFrame({
-            'Frequency': freqArray[i],
+            'Frequency': freqRange,
             'Intensity': intenVal
         })
 

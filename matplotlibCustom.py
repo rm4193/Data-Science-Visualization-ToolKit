@@ -29,6 +29,11 @@ from Fourier import Fourier
 import FourierAnalysisTools as ft
 import override_matplotlib_spect as over
 
+#%%
+def find_nearest( array, value  ):
+    array = np.asarray(array)
+    idx = ( np.abs( array - value)).argmin()
+    return idx
 
 #%% 
 def matplotFFT(w, nameOfFiles):
@@ -38,11 +43,21 @@ def matplotFFT(w, nameOfFiles):
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
     root.destroy()
 
-    for i in range(len(fftp)):
+    minfreq=20 # change the number to whatever minimum frequency you want to see
+    maxfreq=3000 # change the number to whatever maximum frequency you want to see
+
+    for i in range(len(w)):
         intenVal = 10*log10(fftp[i])
         fig = plt.figure()
         ax = fig.add_subplot(1,1,1)
-        ax.plot(  freqArray[i], intenVal  )
+        
+        minfreqIndex = find_nearest( freqArray[i], minfreq   ) 
+        maxfreqIndex = find_nearest( freqArray[i], maxfreq ) 
+
+        freqRange = freqArray[i][minfreqIndex:maxfreqIndex+1]
+        intenVal = intenVal[minfreqIndex:maxfreqIndex+1]
+
+        ax.plot( freqRange, intenVal  )
         ax.set_xlabel('Frequency') # change x-axis label
         ax.set_ylabel('Intensity') # change y-axis label
         plt.title(nameOfFiles[i])
@@ -58,8 +73,8 @@ def matplotFFT(w, nameOfFiles):
 def matplotSpectrogram(w, nameOfFiles):
     root = tk.Tk()
     dirname = filedialog.askdirectory(title='Please select a directory to save your matplotlib spectrograms')
-    minfreq=20
-    maxfreq=2000
+    minfreq=20 # change the number to whatever minimum frequency you want to see
+    maxfreq=3000 # change the number to whatever maximum frequency you want to see
     root.destroy()
     for i in range(len(w)):
         fig, ax = plt.subplots(nrows = 1)
