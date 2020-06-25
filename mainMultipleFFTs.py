@@ -24,7 +24,7 @@ from tkinter import filedialog
 
 # custom module below
 from Fourier import Fourier
-import FourierAnalysisToolsForPackage as ft
+import FourierAnalysisTools as ft
 
 
 
