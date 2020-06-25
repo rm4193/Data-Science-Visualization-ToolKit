@@ -69,7 +69,3 @@ for j in range(num):
     
 
 # %%
-from distributed import Client
-client = Client()
-
-# %%
