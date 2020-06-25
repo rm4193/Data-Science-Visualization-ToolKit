@@ -73,7 +73,7 @@ def plotlyWaveform(w, nameOfFiles):
 
 def stftCustom(w1, nameOfFiles):
 
-    numOfChunks = 4 # how many chunks do you want to split STFT into
+    numOfChunks = 8 # how many chunks do you want to split STFT into
 
     for i in range(len(w1)):
         title = nameOfFiles[i]
