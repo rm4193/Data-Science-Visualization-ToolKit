@@ -71,7 +71,33 @@ def plotlyWaveform(w, nameOfFiles):
 
         fig.show()
 
+def stftCustom(w1, nameOfFiles):
 
+    numOfChunks = 4 # how many chunks do you want to split STFT into
+
+    for i in range(len(w1)):
+        title = nameOfFiles[i]
+        timeArray1 = ft.timeList(w1[i])
+        #%% Short time Fourier Transform (STFT) over the file
+        w1_chunks1 = ft.chunkIt(w1[i], timeArray1, numOfChunks)
+        freqArray1, fftp1 = ft.scanningFFTOneFile(w1_chunks1, w1[i].rate)
+
+        #%% Plotting STFT over ONE file
+        fig1 = go.Figure()
+
+        for i in range(len(fftp1)):
+            fig1.add_trace(go.Scatter(
+                x = freqArray1[i],
+                y = 10*np.log10(fftp1[i])
+            ))
+
+        fig1.update_layout(
+            title=title,
+        )
+
+        fig1.update_xaxes(title_text='Frequency (Hz)') # change x-axis title
+        fig1.update_yaxes(title_text='Intensity (dB)') # change y-axis title
+        fig1.show()
 
 '''
 #%% MAIN FFT

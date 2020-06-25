@@ -19,7 +19,7 @@ print("All WAV files have been imported successfully!")
 
 
 #%% Visualization tool choice section (click shift+enter to run cell)
-options = ['Plotly FFT', 'Matplot FFT', 'Matplot Spectrogram', 'Seaborn FFT', 'Matplotlib contour plot of wavelet', 'Plotly Waveform', 'Bokeh FFT', 'Altair waveform', 'Altair FFT']
+options = ['Plotly FFT', 'Matplot FFT', 'Matplot Spectrogram', 'Seaborn FFT', 'Matplotlib contour plot of wavelet', 'Plotly Waveform', 'Bokeh FFT', 'Altair waveform', 'Altair FFT', 'Plotly STFT']
 print("The list of the different types of graphs:")
 print("\n")
 for j in range(len(options)):
@@ -64,6 +64,9 @@ for j in range(num):
     elif inp == 9:
         print("\nUsing Altair, here is your FFT:")
         altairM.altairFFT(w, nameOfFiles)
+    elif inp == 10:
+        print("\nUsing Plotly, here is your STFT:")
+        plotCustom.stftCustom(w, nameOfFiles)
     else:
         print("invalid input!")
     
