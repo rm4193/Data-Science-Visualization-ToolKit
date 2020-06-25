@@ -21,7 +21,7 @@ import wavio
 #from wavinfo import WavInfoReader
 import tkinter as tk
 from tkinter import filedialog
-from Fourier import Fourier # custom module
+from backend.Fourier import Fourier # custom module
 
 # new packages to add in batch file if not downloaded already
 import glob

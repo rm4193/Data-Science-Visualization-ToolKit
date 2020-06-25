@@ -25,15 +25,15 @@ import tkinter as tk
 from tkinter import filedialog
 
 # custom module below
-from Fourier import Fourier
-import FourierAnalysisTools as ft
-import matplotlibCustom as matCustom
-import plotlyCustom as plotCustom
-import seabornCustom as seaCustom
-import waveletFunction as waveletF
-import bokeh_tools as bokeh
-import altairCustom as altairM
-import override_matplotlib_spect as over
+from backend import Fourier as Fourier
+import backend.FourierAnalysisTools as ft
+import backend.matplotlibCustom as matCustom
+import backend.plotlyCustom as plotCustom
+import backend.seabornCustom as seaCustom
+import backend.waveletFunction as waveletF
+import backend.bokeh_tools as bokeh
+import backend.altairCustom as altairM
+import backend.override_matplotlib_spect as over
 
 import librosa
 #%%
@@ -43,8 +43,8 @@ def matplotFFT(w, nameOfFiles):
     freqArray, fftp = ft.fftMultipleFiles(w)
     #arrayOfFigs = ft.arrayOfPlotly(nameOfFiles, freqArray, fftp)
 
-    minFreq = 5
-    maxFreq = 500 # change to 2000
+    minFreq = 5 # change minimum frequency you want to see in FFT graph
+    maxFreq = 500 # change maximum frequency you want to see in FFT graph
 
     for i in range(len(fftp)):
 

@@ -1,14 +1,14 @@
 #%% IMPORTING PACKAGES (click shift+enter to run cell)
 
-from Fourier import Fourier
-import FourierAnalysisTools as ft
-import matplotlibCustom as matCustom
-import plotlyCustom as plotCustom
-import seabornCustom as seaCustom
-import waveletFunction as waveletF
-import bokeh_tools as bokeh
-import altairCustom as altairM
-import lufs as lufs
+from backend import Fourier as Fourier
+import backend.FourierAnalysisTools as ft
+import backend.matplotlibCustom as matCustom
+import backend.plotlyCustom as plotCustom
+import backend.seabornCustom as seaCustom
+import backend.waveletFunction as waveletF
+import backend.bokeh_tools as bokeh
+import backend.altairCustom as altairM
+import backend.lufs as lufs
 
 print("All packages have been imported successfully!")
 

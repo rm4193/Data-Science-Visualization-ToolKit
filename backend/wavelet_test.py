@@ -25,9 +25,9 @@ import tkinter as tk
 from tkinter import filedialog
 
 # custom module below
-from Fourier import Fourier
-import FourierAnalysisTools as ft
-import waveletFunction as waveletF
+from backend.Fourier import Fourier
+import backend.FourierAnalysisTools as ft
+import backend.waveletFunction as waveletF
 
 #%%
 w, nameOfFiles = ft.fileLoading()

@@ -25,9 +25,9 @@ import tkinter as tk
 from tkinter import filedialog
 
 # custom module below
-from Fourier import Fourier
-import FourierAnalysisTools as ft
-import override_matplotlib_spect as over
+from backend.Fourier import Fourier
+import backend.FourierAnalysisTools as ft
+import backend.override_matplotlib_spect as over
 
 #%%
 def find_nearest( array, value  ):

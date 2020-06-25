@@ -21,8 +21,8 @@ import tkinter as tk
 from tkinter import filedialog
 
 # custom module below
-from Fourier import Fourier
-import FourierAnalysisTools as ft
+from backend.Fourier import Fourier
+import backend.FourierAnalysisTools as ft
 
 #%%
 def find_nearest( array, value  ):
