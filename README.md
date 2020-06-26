@@ -1,5 +1,5 @@
 # Data-Science-Visualization-ToolKit
-A Python toolkit that provides a compilation of different audio visualization tools to provide a simplified workflow for data scientists and non-data scientists.
+A Python toolkit that provides a compilation of different audio visualization analysis tools to provide a simplified workflow for data scientists and non-data scientists.
 
 ### CURRENTLY ONLY FOR WINDOWS 10
 
